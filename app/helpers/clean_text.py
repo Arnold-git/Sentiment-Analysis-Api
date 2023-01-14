@@ -1,6 +1,5 @@
 import re
 import string
-from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 
 # emoji removal function

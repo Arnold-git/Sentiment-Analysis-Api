@@ -1,4 +1,4 @@
-from helpers.clean_text import clean_text
+from app.helpers.clean_text import clean_text
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 analyzer = SentimentIntensityAnalyzer()
@@ -9,14 +9,14 @@ def vader_analysis(text):
     Returns:
         sentiment category -> positive, negative or neutral
     """
-    clean_text = clean_text(text)
+    preprocessed_text = clean_text(text)
 
-    compound = analyzer.polarity_scores(clean_text)['compound']
+    compound = analyzer.polarity_scores(preprocessed_text)['compound']
     if compound >= 0.5:
-        return 'Positive'
+        return ('Positive', compound)
     elif compound <= -0.5 :
-        return 'Negative'
+        return ('Negative', compound)
     else:
-        return 'Neutral'
+        return ('Neutral', compound)
 
 
