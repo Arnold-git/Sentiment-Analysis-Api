@@ -1,16 +1,31 @@
 from fastapi import APIRouter, Form, Response, Request
+from app.schemas.error import ServiceError
+from app.schemas.response import SentimentResponse
 from app.sentiment_analyser.sentiment_analyser import vader_analysis
 from typing import Any
 router = APIRouter()
 
-@router.post("/sentiment", response_model=str, description = "Sentiment Analysis")
+@router.post("/sentiment", response_model=SentimentResponse, description = "Sentiment Analysis")
 async def healthcheck(
-    htppRequest: Request,
     httpResponse: Response,
     text: str = Form(
-       description="Text to be analysis"
+       description="Text to be analysis" 
     )
 ):
-    result = vader_analysis(text)
+    try:
+        result = vader_analysis(text)
 
-    return f"{result[0]}"
+        response = SentimentResponse(
+            success = True,
+            data = result
+        )
+        return response
+
+    except ServiceError as e:
+        httpResponse.status_code = 400
+        response = SentimentResponse(
+            success = False,
+            message = e.meesage
+        )
+
+        return response
