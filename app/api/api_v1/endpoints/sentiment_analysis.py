@@ -1,12 +1,12 @@
-from fastapi import APIRouter, Form, Response, Request
+from fastapi import APIRouter, Form, Response
 from app.schemas.error import ServiceError
 from app.schemas.response import SentimentResponse
 from app.sentiment_analyser.sentiment_analyser import vader_analysis
-from typing import Any
+
 router = APIRouter()
 
 @router.post("/sentiment", response_model=SentimentResponse, description = "Sentiment Analysis")
-async def healthcheck(
+def sentiment_analysis(
     httpResponse: Response,
     text: str = Form(
        description="Text to be analysis" 

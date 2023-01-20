@@ -1,5 +1,7 @@
-import uvicorn
-from fastapi import FastAPI
+from typing import Any
+
+from fastapi import FastAPI, APIRouter, Request
+from fastapi.responses import HTMLResponse
 from starlette.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
 from app.api.api_v1.api import api_router
@@ -29,6 +31,27 @@ app = FastAPI(
     openapi_url=f"{settings.API_V1_STR}/openapi.json"
 )
 
+
+root_router = APIRouter()
+
+@root_router.get("/")
+def index(request: Request) -> Any:
+    """
+    Basic HTML response
+    """
+    body = (
+        "<html>"
+        "<body style='padding: 10px;'>"
+        "<h1>Welcome to Sentiment Analysis Prediction API</h1>"
+        "<div>"
+        "Check the docs: <a href='/docs'>here</a>"
+        "</div>"
+        "</body>"
+        "</html>"
+    )
+
+    return HTMLResponse(content=body)
+
 # Set all CORS enabled origins
 app.add_middleware(
     CORSMiddleware,
@@ -40,4 +63,5 @@ app.add_middleware(
 )
 
 app.include_router(api_router, prefix=settings.API_V1_STR)
+app.include_router(root_router)
 customise_openapi(app)
