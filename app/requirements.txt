@@ -5,3 +5,4 @@ python-multipart==0.0.5
 uvicorn==0.20.0
 vaderSentiment==3.3.2
 loguru==0.6.0
+gunicorn
