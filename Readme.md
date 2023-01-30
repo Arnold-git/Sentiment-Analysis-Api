@@ -8,7 +8,7 @@ The purpose of this README.md file is to explain the steps required to setup thi
 * Python
 * Docker
 
-### Setting up with Python ### 
+## Setting up with Python ### 
 
 * Clone Repo
 ```
@@ -39,3 +39,7 @@ pip install -r requirements.txt
 ```
 uvicorn app.main:app --reload
 ```
+
+## Demo
+
+[](/asset/demo.gif)
