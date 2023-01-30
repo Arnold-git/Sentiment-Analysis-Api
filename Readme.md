@@ -34,9 +34,7 @@ source .venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-### Test Locally ###
-
-* On your terminal run
+* Start Server
 
 ```
 $ uvicorn app.main:app --reload
