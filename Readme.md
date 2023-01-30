@@ -42,4 +42,4 @@ uvicorn app.main:app --reload
 
 ## Demo
 
-[](app/asset/demo.gif)
+[Demo](app/asset/demo.gif)
