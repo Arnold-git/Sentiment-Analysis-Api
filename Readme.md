@@ -22,9 +22,12 @@ cd Sentiment-Analysis-Api
 
 * Create a Virtual environment
 ```
-$ python -m venv env
+$ python -m venv .venv
 ```
-* Clone the project in that directory
+* Activate virutual Environment
+```
+source .venv/bin/activate
+```
 
 * Install dependencies
 ```
