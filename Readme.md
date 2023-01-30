@@ -14,26 +14,26 @@ The purpose of this README.md file is to explain the steps required to setup thi
 git clone https://github.com/Arnold-git/Sentiment-Analysis-Api
 ```
 
-** Change current working directory 
+**Change current working directory**
 ```
 cd Sentiment-Analysis-Api
 ```
 
-* Create a Virtual environment
+**Create a Virtual environment**
 ```
 python -m venv .venv
 ```
-* Activate virutual Environment
+**Activate virutual Environment**
 ```
 source .venv/bin/activate
 ```
 
-* Install dependencies
+**Install dependencies**
 ```
 pip install -r requirements.txt
 ```
 
-* Start Server
+**Start Server**
 
 ```
 uvicorn app.main:app --reload
