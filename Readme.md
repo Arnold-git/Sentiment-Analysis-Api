@@ -42,4 +42,4 @@ uvicorn app.main:app --reload
 
 ## Demo
 
-[Demo](app/asset/demo.gif)
+[Demo](https://github.com/Arnold-git/Sentiment-Analysis-Api/tree/main/app/asset)
