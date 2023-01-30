@@ -6,16 +6,15 @@ The purpose of this README.md file is to explain the steps required to setup thi
 
 ### Requirements 
 * Python
-* Docker
 
 ## Setting up with Python ### 
 
-* Clone Repo
+** Clone Repo **
 ```
 git clone https://github.com/Arnold-git/Sentiment-Analysis-Api
 ```
 
-* Change current working directory
+** Change current working directory 
 ```
 cd Sentiment-Analysis-Api
 ```
