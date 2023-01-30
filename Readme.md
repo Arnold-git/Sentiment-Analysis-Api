@@ -42,3 +42,5 @@ uvicorn app.main:app --reload
 ## Demo
 
 ![Demo](app/asset/demo.gif)
+
+I wrote an article on how to deploy this API to Google Cloud Run. [Check it out here](https://arnoldighiwiyisi.hashnode.dev/build-and-deploy-a-sentiment-analysis-api-with-fastapi-docker-and-google-cloud-run)
