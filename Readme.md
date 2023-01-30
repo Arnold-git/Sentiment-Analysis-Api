@@ -30,7 +30,7 @@ source .venv/bin/activate
 
 **Install dependencies**
 ```
-pip install -r requirements.txt
+pip install -r app/requirements.txt
 ```
 
 **Start Server**
