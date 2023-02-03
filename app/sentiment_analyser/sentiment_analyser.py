@@ -13,23 +13,30 @@ def vader_analysis(text):
     """
     preprocessed_text = clean_text(text)
 
-    compound = analyzer.polarity_scores(preprocessed_text)['compound']
+    raw_cat = analyzer.polarity_scores(preprocessed_text)
+    
+    compound = round(analyzer.polarity_scores(preprocessed_text)['compound'], 2)
     try: 
         if compound >= 0.5:
             sentiment_result = SentimentResult(
                 sentiment = "Positive",
-                polarity_score = round(compound, 2))
+                polarity_score = compound,
+                raw_categorisation = raw_cat
+                )
             return sentiment_result
         elif compound <= -0.5:
             sentiment_result = SentimentResult(
                 sentiment = "Negative",
-                polarity_score = round(compound, 2)
+                polarity_score = compound,
+                raw_categorisation = raw_cat
                 )
             return sentiment_result
         else:
             sentiment_result = SentimentResult(
                 sentiment = "Neutral",
-                polarity_score = round(compound, 2))
+                polarity_score = compound,
+                raw_categorisation = raw_cat
+                )
                 
             return sentiment_result
         
