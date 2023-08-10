@@ -11,5 +11,9 @@ RUN pip install --no-cache-dir --upgrade -r /sentimentApi/requirements.txt
 # 
 COPY ./app /sentimentApi/app
 
-# 
-CMD exec gunicorn --bind :$PORT --workers 1 --worker-class uvicorn.workers.UvicornWorker  --threads 8 app.main:app
+# # 
+# CMD exec gunicorn --bind :$PORT --workers 1 --worker-class uvicorn.workers.UvicornWorker  --threads 8 app.main:app
+
+EXPOSE 80
+
+CMD ["gunicorn", "app.main:app"]
