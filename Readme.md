@@ -25,6 +25,9 @@ python -m venv .venv
 ```
 **Activate virutual Environment**
 ```
+#windows
+source .venv/Scripts/activate
+#linux
 source .venv/bin/activate
 ```
 

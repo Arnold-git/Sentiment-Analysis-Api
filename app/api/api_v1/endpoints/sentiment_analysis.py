@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Form, Response
+from fastapi import APIRouter, Response
 from app.schemas.error import ServiceError
 from app.schemas.response import SentimentResponse
 from app.schemas.input_data import ExampleText
