@@ -6,7 +6,8 @@ from starlette.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
 from app.api.api_v1.api import api_router
 from app.config import settings
-
+from loguru import logger
+import uvicorn
 
 def customise_openapi(app):
     if app.openapi_schema:
@@ -65,3 +66,6 @@ app.add_middleware(
 app.include_router(api_router, prefix=settings.API_V1_STR)
 app.include_router(root_router)
 customise_openapi(app)
+
+if __name__ == '__main__':
+    uvicorn.run('main:app', host='0.0.0.0', port=8000)
