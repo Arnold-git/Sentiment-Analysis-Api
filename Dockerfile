@@ -11,7 +11,7 @@ RUN pip install --no-cache-dir --upgrade -r /sentimentApi/requirements.txt
 # 
 COPY . .
 
-EXPOSE 3200
+EXPOSE 3100
 
 CMD ["gunicorn", "app.main:app"]
 
